@@ -1,15 +1,12 @@
 package util;
 
-
-import java.util.LinkedList;
-
 public class Stack<T> {
 
     public Stack() {
         
     }
 
-    public void  push(T value) {
+    public void push(T value) {
 
     }
 
@@ -28,8 +25,5 @@ public class Stack<T> {
     public Object[] getStack() {
         return null;
     }
-
-
-
 
 }
