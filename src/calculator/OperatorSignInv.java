@@ -1,17 +1,14 @@
 package calculator;
-import util.*;
 
-public class OperatorSignInv extends Operator {
-    @Override
-    public void execute() {
-        double res = st.getStack().top();
-        res = -res;
-        st.getStack().pop();
-        st.getStack().push(res);
-    }
+public class OperatorSignInv extends OperatorUnaryOp {
 
     public OperatorSignInv(State st) {
         super(st);
+    }
+
+    @Override
+    public double operate(double a) {
+        return -a;
     }
     
 }

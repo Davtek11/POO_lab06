@@ -1,5 +1,4 @@
 package calculator;
-import util.*;
 
 abstract class Operator
 {
@@ -7,7 +6,7 @@ abstract class Operator
 
   abstract void execute();
 
-  public Operator(State st) {
+  Operator(State st) {
     this.st = st;
   }
 }

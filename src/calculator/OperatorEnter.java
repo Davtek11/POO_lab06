@@ -1,10 +1,9 @@
 package calculator;
-import util.*;
 
 public class OperatorEnter extends Operator {
     @Override
     public void execute() {
-        
+        st.pushToStack();
     }
 
     public OperatorEnter(State st) {

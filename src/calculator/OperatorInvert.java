@@ -1,17 +1,13 @@
 package calculator;
-import util.*;
 
-public class OperatorInvert extends Operator {
-    @Override
-    public void execute() {
-        double res = st.getStack().top();
-        res = 1/res;
-        st.getStack().pop();
-        st.getStack().push(res);
-    }
-
+public class OperatorInvert extends OperatorUnaryOp {
+    
     public OperatorInvert(State st) {
         super(st);
     }
     
+    @Override
+    public double operate(double a) {
+        return 1/a;
+    }
 }

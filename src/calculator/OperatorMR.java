@@ -1,10 +1,9 @@
 package calculator;
-import util.*;
 
-public class OperatorMR extends Operator {
+public class OperatorMR extends OperatorMemory {
     @Override
     public void execute() {
-        
+        st.current = memory;
     }
 
     public OperatorMR(State st) {

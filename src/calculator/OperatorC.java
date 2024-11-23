@@ -1,11 +1,12 @@
 package calculator;
-import util.*;
 
 public class OperatorC extends Operator {
     @Override
     public void execute() {
-        while(!st.getStack().empty()) {
-            st.getStack().pop();
+        st.current = 0;
+        st.isResult = false;
+        while(!st.stack.empty()) {
+            st.stack.pop();
         }
     }
 

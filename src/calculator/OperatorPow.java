@@ -1,16 +1,13 @@
 package calculator;
-import util.*;
 
-public class OperatorPow extends Operator {
-    @Override
-    public void execute() {
-        double res = Math.pow(st.getStack().top(), 2.0);
-        st.getStack().pop();
-        
-        st.getStack().push(res);
-    }
+public class OperatorPow extends OperatorUnaryOp {
 
     public OperatorPow(State st) {
         super(st);
+    }
+
+    @Override
+    public double operate(double a) {
+        return Math.pow(a, 2.0);
     }
 }
