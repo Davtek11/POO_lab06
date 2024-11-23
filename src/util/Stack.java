@@ -12,14 +12,17 @@ public class Stack<T> {
 
     //add a value to the stack
     public void push(T value) {
-        top = new Node<>(value, top);
+        Node<T> newTop = new Node<>(value, top);
+        top = newTop;
         size++;
     }
 
     //delete the top value
-    public void pop() {
+    public T pop() {
+        T temp = top();
         top = top.next;
         size--;
+        return temp;
     }
 
     //return the value of the top Node
@@ -28,8 +31,9 @@ public class Stack<T> {
     }
 
     //return the stack in a string
+    @Override
     public String toString() {
-        if (empty()){
+        if (empty()) {
             return "";
         }
 
@@ -60,6 +64,21 @@ public class Stack<T> {
         int index = 0;
         while (iterator.hasNext()) {
             stack[index++] = iterator.next();
+        }
+
+        return stack;
+    }
+
+    public String[] getStackString() {
+        if (empty()) {
+            return new String[0];
+            //return null;
+        }
+        String[] stack = new String[size];
+        StackIterator<T> iterator = new StackIterator<>(top);
+        int index = 0;
+        while (iterator.hasNext()) {
+            stack[index++] = String.valueOf(iterator.next());
         }
 
         return stack;

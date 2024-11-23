@@ -2,13 +2,22 @@ package calculator;
 import util.Stack;
 
 public class State {
-    private Stack<Double> st;
+    Stack<Double> stack;
+    double current;
+    boolean isResult;
 
     public State() {
-        st = new Stack<>();
+        stack = new Stack<>();
+        current = 0;
+        isResult = false;
     }
 
-    public Stack<Double> getStack() {
-        return st;
+    public void pushToStack() {
+        isResult = false;
+        stack.push(current);
+    }
+
+    public String currentString() {
+        return " ";
     }
 }

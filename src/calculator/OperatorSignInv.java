@@ -1,9 +1,14 @@
 package calculator;
 
-public class OperatorSignInv extends Operator {
+public class OperatorSignInv extends OperatorUnaryOp {
+
+    public OperatorSignInv(State st) {
+        super(st);
+    }
+
     @Override
-    public void execute() {
-        
+    public double operate(double a) {
+        return -a;
     }
     
 }

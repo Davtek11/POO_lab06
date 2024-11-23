@@ -1,8 +1,13 @@
 package calculator;
 
-public class OperatorAdd extends Operator {
+public class OperatorAdd extends OperatorBinaryOp {
+    
+    public OperatorAdd(State st) {
+        super(st);
+    }
+
     @Override
-    public void execute() {
-        
+    public double operate(double a, double b) {
+        return a + b;
     }
 }

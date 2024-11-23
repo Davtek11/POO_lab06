@@ -5,11 +5,11 @@ public class StackIterator<T> {
     private Node<T> currentNode;
 
     public StackIterator(Node<T> start) {
-        currentNode = start;
+        currentNode = new Node<T>(null, start);
     }
 
     public boolean hasNext() {
-        return currentNode != null;
+        return currentNode.next != null;
     }
 
     public T next() {
