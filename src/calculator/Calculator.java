@@ -5,9 +5,9 @@ import java.util.HashMap;
 
 public class Calculator {
     private boolean exited;
-    String input;
-    State calculatorState;
-    HashMap<String, Operator> operators;
+    private String input;
+    private State calculatorState;
+    private HashMap<String, Operator> operators;
 
     public Calculator() {
         exited = false;
