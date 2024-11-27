@@ -14,9 +14,9 @@ public class OperatorNumber extends OperatorDecimalNumber {
         }
     }
 
-    public OperatorNumber(State st, int val) {
+    public OperatorNumber(State st, double val) {
         super(st);
-        this.val = (double) val;
+        this.val = val;
     }
     
 }
