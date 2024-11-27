@@ -1,10 +1,10 @@
-import calculator.Calculator;
+import calculator.JCalculator;
 
 public class Main
 {
   public static void main(String ... args) {
-    //new JCalculator();
-    new Calculator().run();
+    new JCalculator();
+    //new Calculator().run();
 
   }
 }

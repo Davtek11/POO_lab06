@@ -1,9 +1,9 @@
 package calculator;
 
 public abstract class OperatorMemory extends Operator {
-    static double memory;
+  static double memory;
 
-    OperatorMemory(State st) {
-        super(st);
-    }
+  OperatorMemory(State st) {
+    super(st);
+  }
 }
