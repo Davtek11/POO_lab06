@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
+/*
+ * Contient une calculatrice utilisable depuis le terminal.
+ * @author David Berger, Sara Camassa
+*/
 public class Calculator {
 
   private boolean exited;
@@ -27,6 +31,10 @@ public class Calculator {
     operators.put("C", new OperatorC(calculatorState));
   }
 
+  /*
+   * Teste si une String représente un double
+   * @param val, la String à tester
+  */
   public static boolean isNumber(String val) {
     if (val == null || val.isEmpty()) {
       return false;
@@ -40,15 +48,17 @@ public class Calculator {
   }
 
   /*
-   *
+   * Contient la boucle principale de la calculatrice.
    */
   public void run() {
     System.out.println("java Calculator");
     try (BufferedReader in = new BufferedReader(new InputStreamReader(System.in))) {
       while (!exited) {
+        // Stocke input utilisateur
         System.out.print("> ");
         input = in.readLine();
 
+        // Utilise bon opérateur selon input
         if (input.equals("exit")) {
           exited = true;
           continue;
@@ -71,18 +81,7 @@ public class Calculator {
         }
 
         // Affiche la Stack
-        String stackDisplay = "";
-
-        if (calculatorState.stack.empty()) {
-          stackDisplay = "<empty>";
-        } else {
-          for (String s : calculatorState.stack.getStackString()) {
-            stackDisplay = stackDisplay.concat(s + " ");
-          }
-          stackDisplay = stackDisplay.trim();
-        }
-
-        System.out.println(stackDisplay);
+        System.out.println(calculatorState.stack);
 
       }
 

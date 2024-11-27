@@ -1,6 +1,10 @@
 package calculator;
 import util.Stack;
 
+/*
+ * Permet de sauvegarder l'état d'une stack.
+ * @author David Berger, Sara Camassa
+*/
 public class State {
   Stack<Double> stack;
   double current;
@@ -12,12 +16,11 @@ public class State {
     isResult = false;
   }
 
+  /*
+   * Ajouter une valeur en haut de la stack.
+  */
   public void pushToStack() {
     isResult = false;
     stack.push(current);
-  }
-
-  public String currentString() {
-    return " ";
   }
 }

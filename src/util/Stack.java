@@ -1,5 +1,9 @@
 package util;
 
+/*
+ * Classe implémentant une pile générique.
+ * @author David Berger, Sara Camassa
+*/
 public class Stack<T> {
 
   private Node<T> top;
@@ -10,14 +14,20 @@ public class Stack<T> {
     size = 0;
   }
 
-  //add a value to the stack
+  /*
+   * Ajoute un élément en haut de la pile.
+   * @param value, la valeur du nouvel élément
+  */
   public void push(T value) {
     Node<T> newTop = new Node<>(value, top);
     top = newTop;
     size++;
   }
 
-  //delete the top value
+  /*
+   * Retire l'élément en haut de la pile.
+   * @return la valeur de l'élément retiré
+  */
   public T pop() {
     if(top() == null) return null;
 
@@ -27,40 +37,50 @@ public class Stack<T> {
     return temp;
   }
 
-  //return the value of the top Node
+  /*
+   * Récupère la valeur de l'élément en haut de la pile.
+   * @return la valeur de l'élément en haut de la pile
+  */
   public T top() {
     if(top == null) return null;
     return top.value;
   }
 
-  //return the stack in a string
+  /*
+   * Permet d'afficher la pile.
+   * @return une string contenant les valeurs de tous les éléments de la pile séparés par un espace
+  */
   @Override
   public String toString() {
     if (empty()) {
-      return "";
+      return "<empty>";
     }
 
-    //String builder est mutable
-    StringBuilder s = new StringBuilder();
-    StackIterator<T> iterator = new StackIterator<>(top);
-    while (iterator.hasNext()) {
-      s.append(String.valueOf(iterator.next())).append(" ");
+    String stackDisplay = "";
+
+    for (String s : this.getStackString()) {
+      stackDisplay = stackDisplay.concat(s + " ");
     }
-    //trim() supprime l'espace final
-    return s.toString().trim();
+    
+    return stackDisplay.trim();
   }
 
 
-  //is the stack empty
+  /*
+   * Vérifie si la pile est vide.
+   * @return un booléen indiquant si la pile est vide
+  */
   public boolean empty() {
     return (top == null);
   }
 
-  //return an Object tab composed of the stack values
+  /*
+   * Convertit la pile en tableau d'Object.
+   * @return un tableau d'Object, avec chaque élément un Object représentant un élément de la pile
+  */
   public Object[] getStack() {
     if (empty()) {
       return new Object[0];
-        //return null;
     }
     Object[] stack = new Object[size];
     StackIterator<T> iterator = new StackIterator<>(top);
@@ -72,6 +92,10 @@ public class Stack<T> {
     return stack;
   }
 
+  /*
+   * Convertit la pile en tableau de String.
+   * @return un tableau de String, avec chaque élément une String représentant un élément de la pile
+  */
   public String[] getStackString() {
     if (empty()) {
       return new String[0];
