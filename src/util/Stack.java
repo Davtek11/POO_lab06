@@ -19,6 +19,8 @@ public class Stack<T> {
 
     //delete the top value
     public T pop() {
+        if(top() == null) return null;
+
         T temp = top();
         top = top.next;
         size--;
@@ -27,6 +29,7 @@ public class Stack<T> {
 
     //return the value of the top Node
     public T top() {
+        if(top == null) return null;
         return top.value;
     }
 
